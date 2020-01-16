@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Chapter 9: Flash, Video &amp Audio</h1>
+
+	<p>I'm pretty sure flash is shutting down, and even the book says flash is getting less and less popular, so we'll just skip the flash sections for now. I don't think there's much anyways.</p>
+
+	<h2>Video Formats and File Players:</h2>
+	<ul>
+		<li>Formats:  <p>Movies are available in many formats (BluRay, DVD, VHS). Online, there are more video formats (AVI, Flash, H264, MPEG, etc.). Just as your DVD player won't play a cassette tape, browsers differ in what video formats they do and don't support. In order for users to view your video online, you may need to convert it to another video format. The process of converting a video into another format is referred to as encoding a video. There are several available apps and websites that can do this.</p>
+		</li>
+
+		<li>Players/Plugins:
+			<p>Browsers were intitially designed to show text and images only. For this reason, browsers built priot to 2010 generally required another program called a player or plugin to be instaled in order to play video content. These players and plugins only supported certain video formats. Revently, browsers have evolved to support the HTML5 &ltvideo&gt tag, <b>which renders players and plugins obsolete.</b> Unfortunately, however, you cannot rely on every visitor to your website having a recent browser that suports the new HTML5 element and the browsers that do recognize the &ltvideo&gt element require to the video to be encoded in different formats.</p>
+		</li>
+
+		<li>Approach: 
+			<p>The easiest way to add video to your site is to use a hosted service such as youtube or vimeo. However, there are some cases where using these services is not appropriate (as you will see on the next page) and you will want to host the video on your own site. <b>At the time of writing, to ensure most people can play your video content, it is considered best practice to use the HTML5 &ltvideo&gt element for browsers that support it, and also Flash video for those that do not.</b> This means you would need to upload any videos you want to show in at least two different formats: WebM and MP4. </p>
+		</li>
+		<li>Advantages
+			<p>Hosted video sites provide players that work with the majority of web-browsers. You do not need to worry about encoding your video since these sites allow you to upload your content in a range of formats. Once uploaded, they will automatically convert your video into the various formats required by different browsers. Web hosting companies often charge extra if you use a lot of bandwidth, and video files can be quite large. Therefore, it can cost you extra to host the videos on your own site. If your video is hosted on a site like Youtube or Vimeo, however, you do not need to pay for the bandwidth.</p>
+		</li>
+		<li>Disadvantages
+			<p>Your video will be available on the site of the hosted service, so if you want the content to be exclusively available on your website, ad-free, etc. you need to host the video on your own server and add your own player onto the page. Some services will limit what your video is allowed to include. For example, most prohibit use of advertising within the video you upload. Some hosted services will play their own adverts before your video will begin. The quality of some services can also be limited.</p>
+		</li>
+		<li>The Alternative
+			<p>If you want to host videos on your own site - rather than a hosted service - a lot more work is involved in setting up your site to play the video. We will be looking at two different ways that you can host your own videos: using both Flash and HTML5 &ltvideo&gt element. <b>In order to ensure that the maximum number of visitors to your site can see the video, you will need to use a combination of both of these techniques</b></p>
+		</li>
+	</ul>
+
+	<hr>
+
+	<h2>HTML5: Preparing your video for your pages</h2>
+
+	<ul>
+		<li>Formats:
+			<p>Now all browsers support the same video formats. Therefore, you need to supply your video in more than one format. To reach as many browsers as possible, you should provide your video in the following formats:</p>
+			<ul>
+				<li>H264: IE and Safari</li>
+				<li>Webm: Android, Chrome, Firefox, Opera</li> <br>
+			</ul>
+		</li>
+		<li>Controls:
+			<p>The browser supplies its own controls for the player, and these can vary from browser to browser. You can control the appearance of these controls using Javascript.</p>
+		</li>
+	</ul>
+
+	<br>
+	<h2>HTML5: Adding your video to your pages</h2>
+	<ul>
+		<li>The &ltvideo&gt tag:
+			<ul>
+				<li>src: pretty self-explanatory.</li>
+				<li>poster: allows you to specify an image to show while the video is downloading or until the user tells the video to play.</li>
+				<li>width/height: self-explanatory.</li>
+				<li>controls: when used, this attribute indicates that the browser should supply its own controls for playback.</li>
+				<li>autoplay: when used, this attribute specifies the file should play automatically.</li>
+				<li>loop: when used, this attribute specifies that the video should play again once it has finished.</li>
+				<li>preload: this attribute tells the browser what to do when the page loads. It can have one of three values:
+					<ul>
+						<li>none:the browser should not load the video until the user presse play.</li>
+						<li>auto: the browser should download the video when the page loads.</li>
+						<li>metadata: the browser should just collect information such as the size, first frame, track list, and duration.</li>
+					</ul>
+				</li>
+				
+			</ul>
+		</li>
+	</ul>
+
+	<br>
+
+	<h2>HTML5: Multiple video sources</h2>
+	<ul>
+		<li>The &ltsource&gt tag:
+			<ul>
+				<li>src: you know what this means lol</li>
+				<li>type: you should use this attribute to tell the browser what format the video is in. Otherwise, it will download some of the video to see if it can play the file, which will take time and bandwidth.</li>
+				<li>codecs: the codec that was used to encode the video is supplied with the type attribute. Note the use of single quotes, as well as double quotes in the type attribute, when it is supplied. If the browser does not support the video element or the format of the video used, it will display whatever is between the opening and closing video tags.</li>
+			</ul>
+		</li>
+	</ul>
+
+	<h2>Some examples:</h2>
+
+	<video src="images/5gum.webm" poster="images/on_god.jpg" width="400" height="300" preload controls loop></video>
+
+	<p>A video with multiple sources: use to specify that the video is available in different formats. To test if this works, try opening this webpage in IE or Safari and a different video should appear in the video below.</p>
+	<br>
+	<video poster="images/on_god.jpg" width="400" height="300" preload controls loop>
+		<source src="images/5gum.webm" type='video/webm;codecs="vp8, vorbis"' />
+		<source src="images/5gum.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+	</video>
+
+	<hr>
+
+	<h2>Adding HTML5 Audio to your Pages:</h2>
+	<p>The audio tag shares many attributes that perform the same function as the video tag, so for brevity we'll just list them without the descriptions:</p>
+	<ul>
+		<li>&ltaudio&gt
+			<ul>
+				<li>src</li>
+				<li>controls</li>
+				<li>autoplay</li>
+				<li>preload</li>
+				<li>loop</li>
+			</ul>
+		</li>
+	</ul>
+
+	<audio src="audio/It's My Life.mp3" controls autoplay> <p>This browser does not support out audio</p></audio>
+
+	<h2>Adding Multiple Audio Sources:</h2>
+	<ul>
+		<li>&ltsource&gt</li>
+		<ul>
+			<li>src</li>
+			<li>type</li>
+		</ul>
+	</ul>
+
+	<p>Same idea as the multiple video sources really. I'll include the code just cause, but it does exactly what you would expect.</p>
+
+	<audio controls autoplay>
+		<source src="audio/It's My Life.mp3">
+			<!-- Right now there is no ogg version of the audio, you could add one if you really wanted to test this out.-->
+		<source src="audio/It's My Life.ogg">
+			<p>This browser does not support our format</p>
+	</audio>
+
+	<p>Click  <a href="chapter10.html">here</a> to go to chapter 10!</p>
+</body>
+</html>

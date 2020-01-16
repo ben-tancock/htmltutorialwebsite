@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>This is the body of the page</h1>
+
+	<p>anything within it is displayed in the main browser window</p>
+
+	<p>by enclosing words in the 'b' tag we can make them <b>bold</b></p>
+
+	<p>the same thing can be done with <i>italics</i></p>
+
+	<p>subscripts: E = mc<sup>2</sup></p>
+
+	<p>when 	the browser 	comes across two or more spaces next to each other, 	
+		it only displays 	one space.	This is known as <b>white 	space 	collapsing</b></p>
+
+	<p>we can get around this with the br<br /> tag</p>
+
+	<p>you can create a line between breaks with the <hr /> hr tag</p>
+
+	<blockquote cite="http://en.wikipedia.org">
+		<p>This is a blockquote. For longer quotes that might take up an entire paragraph. Not sure what the 'cite' part is for though. Browsers indent elements of the blockquote. However, you should not use this element to indent stuff -- rather, you should be using css for that!</p>
+	</blockquote>
+
+	<ol>
+		<li>we can make</li>
+		<li>ordered lists</li>
+		<li>with the ol tag</li>
+		<li>and each line is an li tag</li>
+	</ol>
+
+	<ul>
+		<li>likewise</li>
+		<li>an unordered list</li>
+		<li>we can make with the ul tag</li>
+		<ul>
+			<li>you can also</li>
+			<li>put another list inside a list</li>
+			<li>to create a nested list</li>
+		</ul>
+	</ul>
+
+	<dl>
+		<dt>A definition list is created with the dl tag and containts a dt tag which contains the title of a paragraph</dt>
+		<dd>and a dd tag, which contains the definition of what the title is </dd>
+		<dt><br />this is the second dt tag</dt>
+		<dd>the second dt tag is meant to contrast with the first to show you how this works (should probably put a br between each new dt tag btw)</dd>
+	</dl>
+
+	<hr />
+
+	<h2 id="links">Links:</h2>
+	<a href="https://youtu.be/sfiLtV8mGRE?t=10">link tags are made with the 'a' tag</a>
+
+	<h3>Linking to a different part of the same page:</h3>
+	<p>We can set the href variable to a variable preceeded by a hash '#' symbol to signify that we want to be taken to a tag with a certain id. <br /> We can set the id of the tags by saying 'id="(thing)"' inside its tag.</p>
+
+	<a href="#the_bottom">This takes you to the tag with the id 'the_bottom'.</a>
+
+	<hr />
+	<h2>Images:</h2>
+	<p>To insert an image, we use the 'img' tag... (note: the img tag does not have another img closing tag, it is all contained within 1 tag</p>
+	<img src="images/on_god.jpg">
+	<hr />
+
+	<p>You can adjust the width and height of the image inside the image tag with the width and height variables, and also put a text description and title</p>
+	<img src="images/on_god.jpg" width="315" height="400" alt="a man is smiling memely" title="some meme I found">
+
+	<hr />
+
+	<p> <img src="images/on_god.jpg" width="94.5" height="120" > Where you place an image in code can determine how it appears. For example, you can place an image inside a paragraph tag either at the beginning or any other spot to <img src="images/on_god.jpg" width="94.5" height="120"> make it appear indented in the paragraph or just right in the middle, like so.</p>
+
+	<br /> <hr />
+
+	<p> <img src="images/on_god.jpg" width="94.5" height="120" align="right" >You can also align pictures in different spots! Observe! Align = right!</p>
+
+	<br /><br /><br /><br /><br /><br /><br />
+	<hr />
+
+	<p> <img src="images/on_god.jpg" width="94.5" height="120" align="top" >
+		<figcaption>This is an image with a caption, thanks to the figcaption tag</figcaption>
+	 </p>
+	 <hr />
+
+	<p> <img src="images/on_god.jpg" width="94.5" height="120" align="top" > An alignment of 'top' will put the first line of text at the top of the image, and the subsequent lines of text underneath. blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah<br/>
+	blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah<br/>blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah<br/>blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah<br/>
+
+	<hr />
+
+	<h2>Tables</h2>
+	<p>
+		The table element is used to create a table. The contents of the table are written out row by row. You indicate the start of each row with the tr tag. The tr stands for Table Row. Inside each tr tag is multiple td tags. Let's try it out below:
+	</p>
+	<hr>
+	<table>
+		<tr>
+			<td>15</td>
+			<td>20</td>
+			<td>25</td>
+		</tr>
+		<tr>
+			<td>30</td>
+			<td>60</td>
+			<td>73</td>
+		</tr>
+	</table>
+	<hr>
+
+	<p>We can also use the th tag which is used to represent the heading for either a column or a row. It is declared inside the tr tag, and the scope of a th tag is specified inside the tag as a variable as either "row" or "col". Note that when we make the th tags for the columns, we need to make one empty th tag to align the column headers properly.</p>
+
+	<table>
+		<tr>
+			<th></th>
+			<th scope="col">Saturday</th>
+			<th scope="col">Sunday</th>
+		</tr>
+		<tr>
+			<th scope="row">PeePee:</th>
+			<td>12</td>
+			<td>34</td>
+		</tr>
+		<tr>
+			<th scope="row">PooPoo:</th>
+			<td>15</td>
+			<td>23</td>
+		</tr>
+	</table>
+
+	<hr>
+
+	<h3>Spanning Rows and Columns:</h3>
+	<p>Sometimes you may need entries in a table to stretch across more than one column. The colspan attribute can be used on a th or td element and indicates how many columns that cell should run across.</p>
+
+	<table>
+		<tr>
+			<th></th>
+			<th scope="col">9am</th>
+			<th scope="col">10am</th>
+			<th scope="col">11am</th>
+			<th scope="col">12am</th>
+		</tr>
+		<tr>
+			<th scope="row">Monday</th>
+			<td colspan="2">Geography</td>
+			<td>Math</td>
+			<td>Art</td>
+		</tr>
+		<tr>
+			<th scope="row">Tuesday</th>
+			<td colspan="3">Gym</td>
+			<td>Home Ec</td>
+		</tr>
+	</table>
+
+	<p>It's sorta hard to see, but we used colspan to make Geography take up 2 cells and Gym take up 3. Let's try and pretty this up with some styling (later)!</p>
+
+	<br>
+	<p>Let's try rowspan now:</p>
+
+	<table>
+		<tr>
+			<th></th>
+			<th scope="col">ABC</th>
+			<th scope="col">BBC</th>
+			<th scope="col">CNN</th>
+		</tr>
+		<tr>
+			<th scope="row">6pm-7pm</th>
+			<td rowspan="2">Movie</td>
+			<td>Comedy</td>
+			<td>News</td>
+		</tr>
+		<tr>
+			<th scope="row">7pm-8pm</th>
+			<td>Sport</td>
+			<td>Current Affairs</td>
+		</tr>
+	</table>
+
+	<p>Like the first table, you can sort of see how we're using rowspan here. But some styling would make it much easier to see. <br> Let's try styling both now:</p>
+
+	<hr>
+
+	<h3>Long Tables:</h3>
+	<p>There are 3 elements that help distinguish between the main content of the table and the first and last rows. <br><br>These elements help people who use screen readers and also allow you to style these sections in a different manner <br>than the rest of the table (as you will see when you learn about css)</p>
+
+	<p>These elements are thead, tbody, and tfoot.</p>
+
+	<p>
+		<b>thead:</b> the headings of the table should sit inside the thead element. <br>
+		<b>tbody:</b> the body should sit inside the tbody element. <br>
+		<b>tfoot:</b> the footer belongs inside the tfoot element. <br>
+	</p>
+
+
+	<p>In this example, Date, Income and Expenditure are inside the thead tag, even though they aren't the only headers, they are the column headers of the table.</p>
+
+	<p>Everything from the 1st of January to the 31st of January is in the tbody tag.</p>
+
+	<p>The numbers at the bottom, 7824 and 1241 are in the tfoot tag.</p>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Date</th>
+				<th scope="col">Income</th>
+				<th scope="col">Expenditure</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<th scope="row">1st January</th>
+				<td>250</td>
+				<td>36</td>
+			</tr>
+			<tr>
+				<th scope="row">2nd January</th>
+				<td>285</td>
+				<td>48</td>
+			</tr>
+			<tr>
+				<th scope="row">3rd January</th>
+				<td>260</td>
+				<td>42</td>
+			</tr>
+			<tr>
+				<th scope="row">4th January</th>
+				<td>290</td>
+				<td>38</td>
+			</tr>
+			<tr>
+				<th scope="row">5th January</th>
+				<td>310</td>
+				<td>115</td>
+			</tr>
+			<tr>
+				<th scope="row">6th January</th>
+				<td>168</td>
+				<td>14</td>
+			</tr>
+			<tr>
+				<th scope="row">7th January</th>
+				<td>226</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<th scope="row">8th January</th>
+				<td>253</td>
+				<td>37</td>
+			</tr>
+			<tr>
+				<th scope="row">9th January</th>
+				<td>295</td>
+				<td>33</td>
+			</tr>
+			<tr>
+				<th scope="row">10th January</th>
+				<td>216</td>
+				<td>46</td>
+			</tr>
+			<tr>
+				<th scope="row">11th January</th>
+				<td>244</td>
+				<td>29</td>
+			</tr>
+			<tr>
+				<th scope="row">12th January</th>
+				<td>297</td>
+				<td>32</td>
+			</tr>
+			<tr>
+				<th scope="row">13th January</th>
+				<td>328</td>
+				<td>86</td>
+			</tr>
+			<tr>
+				<th scope="row">14th January</th>
+				<td>215</td>
+				<td>38</td>
+			</tr>
+			<tr>
+				<th scope="row">15th January</th>
+				<td>254</td>
+				<td>30</td>
+			</tr>
+			<tr>
+				<th scope="row">16th January</th>
+				<td>256</td>
+				<td>27</td>
+			</tr>
+			<tr>
+				<th scope="row">17th January</th>
+				<td>311</td>
+				<td>68</td>
+			</tr>
+			<tr>
+				<th scope="row">18th January</th>
+				<td>212</td>
+				<td>39</td>
+			</tr>
+			<tr>
+				<th scope="row">19th January</th>
+				<td>234</td>
+				<td>36</td>
+			</tr>
+			<tr>
+				<th scope="row">20th January</th>
+				<td>221</td>
+				<td>43</td>
+			</tr>
+			<tr>
+				<th scope="row">21st January</th>
+				<td>259</td>
+				<td>34</td>
+			</tr>
+			<tr>
+				<th scope="row">22nd January</th>
+				<td>247</td>
+				<td>31</td>
+			</tr>
+			<tr>
+				<th scope="row">23rd January</th>
+				<td>248</td>
+				<td>17</td>
+			</tr>
+			<tr>
+				<th scope="row">24th January</th>
+				<td>229</td>
+				<td>45</td>
+			</tr>
+			<tr>
+				<th scope="row">25th January</th>
+				<td>264</td>
+				<td>34</td>
+			</tr>
+			<tr>
+				<th scope="row">26th January</th>
+				<td>258</td>
+				<td>41</td>
+			</tr>
+			<tr>
+				<th scope="row">27th January</th>
+				<td>283</td>
+				<td>22</td>
+			</tr>
+			<tr>
+				<th scope="row">28th January</th>
+				<td>256</td>
+				<td>30</td>
+			</tr>
+			<tr>
+				<th scope="row">29th January</th>
+				<td>278</td>
+				<td>47</td>
+			</tr>
+			<tr>
+				<th scope="row">30th January</th>
+				<td>251</td>
+				<td>15</td>
+			</tr>
+			<tr>
+				<th scope="row">31st January</th>
+				<td>129</td>
+				<td>64</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th></th>
+				<td>7824</td>
+				<td>1241</td>
+			</tr>
+		</tfoot>
+		
+
+	</table>
+	<p>In the book, there is css styling to make the footer and other cells look more obvious. We will fix this up later, don't worry! ;^)</p>
+
+	<hr>
+
+	<h3>Old Code (which you shouldn't use) - Width and Spacing:</h3>
+
+	<p>There are some outdated attributes which you shouldn't use on new websites. All of these attributes have been replaced by <b>CSS</b>. I won't bother going over these like the book does, but I will let you know what they are just cause: width and spacing. Don't use them.</p>
+
+	<hr>
+
+	<p>This HTML page is getting quite big, and if I or someone else want to review it in the future it might be hard to navigate. Let's hop on over to a new one for the next few sections. Please click <a href="chapter7+.html">here</a> :)</p>
+
+
+
+
+
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+	<p id="the_bottom"> <b>I'm the bottom :^)</b></p>
+	<a href="#links">Back to links!</a>
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+</body>
+</html>

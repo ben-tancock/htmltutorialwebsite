@@ -1,0 +1,29 @@
+#text {
+	font-family: Courier New, monospace;
+}
+
+#potatoes {
+	font-family: arial;
+	background-color: rgb(185,179,175);
+}
+
+#selectors, td, th {
+	border: 1px solid black;
+	width: 50;
+	height: 30px;
+	border-collapse: separate;
+}
+
+td {
+	width: 300px;
+	text-align: center;
+	padding-top: 10px;
+}
+
+#leftcolumn {
+	text-align: left;
+}
+
+li {
+	margin: 20px;
+}

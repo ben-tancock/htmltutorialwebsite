@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="css/styles.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<h1>Chapter 10: Introducing CSS</h1>
+
+	<p>With CSS, we can customize elements by their block level (for blockline elements) or inline elements specifically, or both.</p>
+
+	<p>CSS works by associating rules with HTML elements. These rules govern how the content specified elements should be displayed. A CSS rule contains two parts: a <b>selector</b> and a <b>declaration.</b></p>
+
+	<p>CSS selectors sit inside curly brackets and each is made up of two parts: a 
+		<b>property</b> and a <b>value</b>, separated by a semi-colon.</p>
+
+	<ul>
+		<li>h1, h2, h3 { font-family: Arial; color: yellow;}
+			<ul>
+				<li><i>This rule indicates that all h1, h2, and h3 elements should be shown in the Arial typeface, in a yellow colour.</i></li>
+			</ul>
+		</li>
+	</ul>
+
+	<p>You can use both external and internal CSS. The difference is pretty simple: External is when you use the &ltlink&gt tag (which resides in the head) to tell the browser where to find the CSS file used to style the page. Link is an empty element (meaning it does not need a closing tag) and has 3 attributes:</p>
+
+	<ul>
+		<li>href: 
+			<p>this specifies the path to the css file</p>
+		</li>
+		<li>type:
+			<p>this specifies the type of document being linked to</p>
+		</li>
+		<li>rel: 
+			<p>this specifies the relationship between the html page and the file it is linked to. the value should be stylesheet when linking to a CSS file.</p>
+		</li>
+	</ul>
+
+	<p>Internal CSS is when the CSS code is inside the HTML page code itself. It is declared using the &ltstyle&gt tag, which specifies the type attribute, and then the CSS code is contained within it.</p>
+
+	<p>When building a site with more than one page, it is expedient to use an external CSS style sheet. That's what we'll do from now on, and we'll generally avoid internal CSS styling.</p>
+
+	<p id="text">I made an external CSS style sheet that changes all tags with an id of 'text' to have a different font. Neat! Let's try another:</p>
+
+	<div id="potatoes">
+		<h3>Potatoes</h3>
+		<p>There are dozens of different potato varieties. They are usually described as early, second early and maincrop potatoes.</p>
+	</div>
+	<p>The above blurb was 2 different elements: an h3 tag and a p tag. I was able to get both to have a uniform, connecting background by grouping them together with the div tag, and setting the div tags id. Without the div tag, it would look like this: </p>
+
+	<h3 id="potatoes">Potatoes</h3>
+		<p id="potatoes">There are dozens of different potato varieties. They are usually described as early, second early and maincrop potatoes.</p>
+
+	<div id="potatoes">
+		<h2>CSS Selectors:</h2>
+
+		<p>There are many different types of CSS selectors that allow you to target rules to specific elements in an HTML document. CSS selectors are case sensitive. So they must match element names and attribute values exactly. There are some more advanced selectors which will allow you to select elements based on attributes and their values. The table below lists the most commonly used CSS selectors.</p>
+
+		<table id="selectors">
+			<tr>
+				<th scope="col" align="left">SELECTOR</th>
+				<th scope="col">MEANING</th>
+				<th scope="col">EXAMPLE</th>
+			</tr>
+			<tr>
+				<th scope="row" align="left">UNIVERSAL SELECTOR</th>
+				<td>Applies to all elements in the document</td>
+				<td>* { } <p>targets all elements on the page</p></td>
+			</tr>
+
+			<tr>
+				<th scope="row" align="left">TYPE SELECTOR</th>
+				<td>Matches element names</td>
+				<td>h1, h2, h3 { } <p>Targets the h1, h2, and h3 elements</p></td>
+			</tr>
+
+			<tr>
+				<th scope="row" align="left">CLASS SELECTOR</th>
+				<td>Matches an element whose class attribute has a value that matches the one specified after the period symbol</td>
+				<td>.note { } 
+					<p>Targets any element whose class attribute has a value of note</p>
+					<p>p.note { }</p>
+					<p>
+						Targets only &ltp&gt elements whose class attribute has a value of note
+					</p>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row" align="left">ID SELECTOR</th>
+				<td>Matches an element whose id attribute has a value that matches the one specified after the pound or hash symbol</td>
+				<td>#introduction { } 
+					<p>Targets the element whose id attribute has the value of introduction</p>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row" align="left">CHILD SELECTOR</th>
+				<td>Matches the element that is a direct child of another</td>
+				<td>li&gta { }
+					<p>Targets any &lta&gt elements that are children of an &ltli&gt element (but not other &lta&gt elements in the page)</p>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row" align="left">DESCENDANT SELECTOR</th>
+				<td>Matches an element that is a descendant of another specified element (not just a direct child of that element)</td>
+				<td>p a { }
+					<p>Targets any &lta&gt elements that sit inside a &ltp&gt element, even if there are other elements nested between them.</p>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row" align="left">ADJACENT SIBLING SELECTOR</th>
+				<td>Matches an element that is the next sibling of another</td>
+				<td>h1+p { }
+					<p>Targets the first &ltp&gt element after any &lth1&gt element (but not other &ltp&gt elements)</p>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row" align="left">GENERAL SIBLING SELECTOR</th>
+				<td>Matches an element that is a sibling of another, although it does not have to be directly preceding an element</td>
+				<td>h1~p { }
+					<p>If you had two &ltp&gt elements that are siblings of an &lth1&gt element, this rule would apply to both</p>
+				</td>
+			</tr>
+		</table>
+
+		<br>
+
+		<h2>How CSS Rules Cascade:</h2>
+		<p>If there are two or more rules that apply to the same element, it is important to understand which take precedence.</p>
+		<ul>
+			<li>LAST RULE: If the two selectors are identical, the latter of the two will take precedence.</li>
+			<li>SPECIFICITY: If one selector is more specific than the others, the more specific rule will take precedence over the more general ones. (e.g. h1 is more specific than *, p b is more specific than p, p#intro is more specific than p, etc.) </li>
+			<li>IMPORTANT: You can add !important after any property value to indicate that it should be considered more important than other rules that apply to the same element.</li>
+		</ul>
+
+
+		<h2>Inheritance:</h2>
+		<p>If you specify the font-family or color properties on the &ltbody&gt element, they will apply to most child elements. This is because the font-family property is inherited by child elements. It saves you from having to apply these properties to as many elements, and results in simpler style sheets.</p>
+
+		<p>Compare this with the background-color or border properties, which are NOT inherited by child elements. If these were inherited by all child elements then the page would look quite messy.</p>
+
+		<p> You can force a lot of properties to inherit values from their parent elements by using <b>inherit</b> for the value of the properties.</p>
+
+		<p>Click <a href="Chapter11.html">here</a> to move on to the next chapter.</p>
+
+		<br><br><br>
+
+
+
+		
+	</div>
+
+</body>
+</html>

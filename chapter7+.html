@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Chapter 7: Forms</h1>
+	<p>The term 'forms' refers to different elements that allow you to collect information from visitors to your website. <br>The most well known example is probably Google's search bar.
+	</p>
+
+	<h2>Form Structure:</h2>
+
+	<p>Form controls live inside the form tag. This element should always carry the action attribute and will usually have a method and id attribute too.</p>
+
+	<ul>
+		<li><b>action</b>: The value of the action attribute is the URL for the page on the server that will recieve the information in the form when it is submitted.</li>
+		<li><b>method</b>: Forms can be sent using one of the two methods: get or post.</li>
+		<li><b>id</b>: Value used to identify the form distinctly from other elements on the page (and is often used by scripts -- such as those that check you have entered the information into the fields that require values)</li>
+		<li><b>size: The size attribute should NOT be used on new forms.</b></li>
+		<li><b>input (tag that resides inside form)</b>: used to create several different form controls. The value of the type attribute determines what kind of input they will be creating.</li>
+			<ul>
+				<li>type="text": When the type attribute has a value of text, it creates a single line of text input.</li>
+				<li>type="password": When the type attribute has the value of password, it creates a text box that acts just like a single line of text input, except the characters are blocked out.</li>
+				<li>name: When users enter the information into a form, the server needs to know which form control each piece of data was entered into. Therefore, each form control requires a name attribute.</li>
+				<li>maxlength: You can use the maxlength attribute to limit the number of characters a user may enter into the text field.</li>
+				<li>textarea: element is used to create multi-line text input. Unlike other input elements, this is not an empty element. It should therefore have an opening and closing tag.</li>
+			</ul>
+	</ul>
+
+	<br>
+	<p>Currently, filling out the form below and hitting the 'enter' key takes you to the login page with whatever value you filled in being put into the URL. It doesn't really do much, but we'll add more to this later as well :)</p>
+	<form action="file:///D:/htmlandcss/website/login.html">
+		<p>Username:
+			<input type="text" name="username" size="15" maxlength="30" />
+		</p>
+	</form>
+
+	<br>
+
+
+	<p>There are several types of form controls that you can use to collect information from visitors to your site:</p>
+	<ul>
+		<li><b>Adding text</b></li>
+		<ul>
+			<li>Text input:
+				<ul>
+					<form>
+						Username: <input type="text" name="textexample" size="15" max="30">
+					</form>
+				</ul>
+			</li><br>
+
+			<li>Password input:
+				<ul>
+					<form>
+						Password: <input type="password" name="passwordexample" size="15" max="30">
+					</form>
+				</ul>
+			</li><br>
+
+			<li>Text area (multi-line):
+				<ul>
+					<form>
+						<textarea name="txtareaexample" cols="20" rows="4">
+							Enter text here...
+						</textarea>
+					</form>
+				</ul>
+			</li><br>
+		</ul>
+
+		<li><b>Making choices</b></li>
+		<ul>
+			<li>Radio buttons:
+				<ul>
+					<form>
+						<input type="radio" name="radioexample" value="rock" /> Rock
+						<input type="radio" name="radioexample" value="pop" /> Pop
+						<input type="radio" name="radioexample" value="jazz" /> Jazz
+					</form>
+				</ul>
+			</li><br>
+
+			<li>Checkboxes:
+				<ul>
+					<form>
+						<form>
+						<input type="checkbox" name="checkexample" value="rock" /> iTunes
+						<input type="checkbox" name="checkexample" value="rock" /> Spotify
+						<input type="checkbox" name="checkexample" value="rock" /> Last.fm
+					</form>
+					</form>
+				</ul>
+			</li><br>
+
+			<li>Drop-down boxes:
+				<ul>
+					<form></form>
+					What device do you listen on?
+					<select name="devices">
+						<option value="ipod">iPod</option>
+						<option value="radio">Radio</option>
+						<option value="computer">Computer</option>
+					</select>
+				</ul>
+			</li><br>
+
+			<li>Multiple Select box:
+				<ul>
+					<form>
+						Do you play any of the following instruments? <br>(you can select more than one option by holding down the ctrl key)
+						<br>
+
+						<select name="instruments" size="3" multiple="multiple" >
+							<option value="guitar">Guitar</option>
+							<option value="drums">Drums</option>
+							<option value="piano">Piano</option>
+						</select>
+					</form>
+				</ul>
+			</li>
+			<br>
+		</ul>
+
+		<li><b>Submitting forms</b></li>
+		<ul>
+			<li>Submit buttons:
+				<form>
+					Subscribe to our email list:
+					<input type="text" name="email" />
+					<input type="submit" name="subscribe" value="Subscribe" /> 
+				</form>
+			</li>
+			<br>
+
+			<li>Image buttons: (I know the positioning isn't ideal, but we can sort out smaller details like this with CSS later. You get the idea.) 
+				<form>
+					<br>Subscribe to our mail list:
+					<input type="text" name="email" />
+					<input type="image" src="images/submit.png" width="76.8" height="28">
+				</form>
+			</li>
+			<br>
+		</ul>
+
+		<li><b>Uploading files</b></li>
+		<ul>
+			<li>File upload:
+				<form>
+					Upload your song in mp3 format: <br>
+					<input type="file" name="user-song" />
+					<input type="submit" value="Upload" />
+				</form>
+			</li>
+		</ul>
+		<br>
+		<li><b>Date/Email/URL/Search Input:</b></li>
+		<ul>
+			<li>Date:
+				<form method="post">
+					<label for="username">Departure Date:</label>
+					<input type="date" name="depart" />
+					<input type="submit" value="Submit" />
+				</form>
+			</li>
+			<br>
+			<li>Email:
+				<form>
+					<p>Please enter your email:</p>
+					<input type="email" name="emailinput">
+					<input type="submit" name="emailSubmit">
+				</form>
+			</li>
+			<br>
+			<li>URL:
+				<form>
+					<p>Please enter a website URL:</p>
+					<input type="url" name="urlinput">
+					<input type="submit" name="urlsubmit">
+				</form>
+			</li>
+			<br>
+			<li>Search:
+				<form>
+					<p>Please enter a web search:</p>
+					<input type="search" name="searchinput">
+					<input type="submit" name="searchsubmit">
+				</form>
+
+			</li>
+		</ul>
+	</ul>
+
+	<p>All of the above examples would usually have their action attributes filled out with something. Right not they really don't do anything. But you can see some of them return some values when they refresh the page, reflected in the url. We'll see what we can do with the action attributes later. For now, this is just how to make the forms visually appear, not function.</p>
+
+	<p>Click <a href="chapter8.html">here</a> to go to chapter 8!</p>
+
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Chapter 8: Extra Markup</h1>
+
+	<p>This chapter should be sort of brief, since I'm skipping some of the stuff I don't think I'll need to care about, like using older versions of HTML.</p>
+
+	<!-- FYI, this is how you make HTML comments -->
+	<h2>ID attributes:</h2>
+	<p>id attributes in tags allow you to uniquely identify different tags and style them differently with CSS, even though they might be the same type of tag. I sort of already knew this and have done it before.</p>
+
+	<hr>
+	<p>Some elements will always appear to start on a new line in the browser window. These are known as <b>block elements.</b> Other elements that appear to continue in the same line as their neighbouring elements are known as <b>inline elements.</b></p>
+
+	<p>The div element allows you to group a set of elements together in one block-level box. Using an id or class attribute on a div element means you can style entire sections differently with CSS rules. </p>
+
+	<p>The span element acts like the inline equivelant of the div element. It is used to either:
+		<ol>
+			<li>Contain a section of text where there is no other suitable element to differentiate it from its surrounding text</li>
+			<li>Contain a number of inline elements</li>
+		</ol>
+		The most common reason why people use span elements is so that they can control the appearance of the content of these elements using CSS. You will usually see that a class or id attribute is used with span elements:
+		<ul>
+			<li>to explain the purpose of this span element</li>
+			<li>so that CSS styles can be applied to elements that have specific values for these attributes</li>
+		</ul>
+	</p>
+
+	<hr>
+
+	<h2>IFrames:</h2>
+
+	<p>An iframe is like a little window that has been cut into your page -- and in that window you can see another page. The term iframe is an abbreviation of inline frame. One commone use of iframes is to embed a google map into the page. An iframe is created with an iframe tag. There are a few attributes that you will need to know to use it: </p>
+
+	<ul>
+		<li>src: specifies the URL of the page to show in the frame.</li>
+		<li>height: the height attribute specifies the height of the iframe in pixels.</li>
+		<li>width: you get the idea.</li>
+		<li>scrolling: won't be supported in HTML5, but it indicates whether the iframe should have scrollbars or not.</li>
+		<li>frameborder: also won't be supported in HTML5... it indicates whether the frame should have a border or not.</li>
+		<li>seamless: a new attribute in HTML5, can be applied to an iframe where scrollbars are not desired. Not supported in older browsers.</li>
+	</ul>
+
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11202.50317769415!2d-75.7060782195127!3d45.41688503845896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce05b25f5113af%3A0x8a6a51e131dd15ed!2sOttawa%2C%20ON!5e0!3m2!1sen!2sca!4v1579042525970!5m2!1sen!2sca" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+	<p><b>In google maps, you need to specifically click the 'embed in map' option to get the proper link for an iframe.</b></p>
+
+	<hr>
+
+	<h2>Other stuff:</h2>
+
+	<h3>Information about your pages:</h3>
+	<ul>
+		<li>meta tag:
+			<ul>
+				<li>description: Containts a description about the page. This is commonly used by search engines to understand what the page is about. Should be a max of 155 characters. Is sometimes is also displayed in search engine results.</li>
+				<li>keywords: This contains a list of comma-separated words that a user might search on to find the page. <b>In practice, it no longer has any noticeable effect on how seach engines index your site. </b></li>
+				<li>robots: Indicates whether a search engine should add this page to their search results or not. A value of noindex can be useful if this page should not be added. A value of nofollow can be used if search engines should add this page in their results but not any pages that it links to.</li>
+			</ul>
+		</li>
+	</ul>
+
+	<p>The meta element also uses the http-equiv attributes in pairs. In our example, you can see three instances of the http-equiv attributes, each one has a different purpose:</p>
+	<ul>
+		<li>author: This defines the author of the webpage</li>
+		<li>pragma: This prevents the browser from caching the page (storing it locally to save time downloading it on subsequent visits)</li>
+		<li>expires: Because browsers often cache content of a page, the expires option can be used to indicate when the page should expire (and no longer be cached). Note the date must be specified.</li>
+	</ul>
+
+	<h3>Escape Characters:</h3>
+	<p>There are some characters that are used in and reserved by the HTML code. (For example the left and right angled brackets). Therefore, if you want these characters to appear on your page you need to use what are termed "escape" characters. For example, to write a left angled bracket, you can use either & + lt or & + #60 which = &lt. Here are them all listed in the book:</p>
+
+	<ul>
+		<li>&lt</li>
+		<li>&gt</li>
+		<li>&amp</li>
+		<li>&quot</li>
+		<li>&cent</li>
+		<li>&pound</li>
+		<li>&yen</li>
+		<li>&euro</li>
+		<li>&copy</li>
+		<li>&reg</li>
+		<li>&trade</li>
+		<li>&lsquo</li>
+		<li>&rsquo</li>
+		<li>&ldquo</li>
+		<li>&rdquo</li>
+		<li>&times</li>
+		<li>&divide</li>
+	</ul>
+
+	<p>Click <a href="chapter9.html">here</a> to move on to chapter 9!</p>
+
+
+</body>
+</html>
